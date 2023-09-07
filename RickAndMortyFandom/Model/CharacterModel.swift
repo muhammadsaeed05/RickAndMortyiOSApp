@@ -5,6 +5,8 @@
 //  Created by Muhammad Saeed on 25/08/2023.
 //
 
+import SwiftUI
+
 // MARK: - CharacterResponse
 struct CharacterResponse: Codable {
     let info: Info?
@@ -48,4 +50,16 @@ enum Status: String, Codable {
     case alive = "Alive"
     case dead = "Dead"
     case unknown = "unknown"
+    
+    var color: Color {
+        switch self {
+        case .alive:
+            return Color(.green)
+        case .dead:
+            return Color(.red)
+        case .unknown:
+            return Color(.gray)
+        }
+    }
 }
+
